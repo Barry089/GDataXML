@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		45ABD9456D275D0071AED5EB /* libPods-GDataXML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BBDC5347D65C771426B5958 /* libPods-GDataXML.a */; };
+		AD33AF241DA29B8300A98056 /* xml.xml in Resources */ = {isa = PBXBuildFile; fileRef = AD33AF231DA29B8300A98056 /* xml.xml */; settings = {ASSET_TAGS = (); }; };
 		ADF7CB941DA290E500F3A70B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF7CB931DA290E500F3A70B /* main.m */; };
 		ADF7CB971DA290E500F3A70B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF7CB961DA290E500F3A70B /* AppDelegate.m */; };
 		ADF7CB9A1DA290E500F3A70B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF7CB991DA290E500F3A70B /* ViewController.m */; };
@@ -20,6 +21,7 @@
 		0BBDC5347D65C771426B5958 /* libPods-GDataXML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GDataXML.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		373FF9A65289A255F94BBC21 /* Pods-GDataXML.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDataXML.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GDataXML/Pods-GDataXML.debug.xcconfig"; sourceTree = "<group>"; };
 		69920B140C12E86DE2C8E066 /* Pods-GDataXML.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDataXML.release.xcconfig"; path = "Pods/Target Support Files/Pods-GDataXML/Pods-GDataXML.release.xcconfig"; sourceTree = "<group>"; };
+		AD33AF231DA29B8300A98056 /* xml.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = xml.xml; sourceTree = "<group>"; };
 		ADF7CB8F1DA290E500F3A70B /* GDataXML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDataXML.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF7CB931DA290E500F3A70B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ADF7CB951DA290E500F3A70B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		ADF7CB921DA290E500F3A70B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AD33AF231DA29B8300A98056 /* xml.xml */,
 				ADF7CB931DA290E500F3A70B /* main.m */,
 			);
 			name = "Supporting Files";
@@ -166,6 +169,7 @@
 				ADF7CBA21DA290E600F3A70B /* LaunchScreen.storyboard in Resources */,
 				ADF7CB9F1DA290E600F3A70B /* Assets.xcassets in Resources */,
 				ADF7CB9D1DA290E600F3A70B /* Main.storyboard in Resources */,
+				AD33AF241DA29B8300A98056 /* xml.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +344,12 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = GDataXML/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-lxml2";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"GDataXML-HTML\"",
+					"-l\"xml2\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = water.GDataXML;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,7 +363,12 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = GDataXML/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-lxml2";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"GDataXML-HTML\"",
+					"-l\"xml2\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = water.GDataXML;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

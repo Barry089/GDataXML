@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextView *textView;
 
+- (IBAction)startXMLParsing:(id)sender;
+- (IBAction)startHTMLParsing;
 @end
 
