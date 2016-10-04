@@ -14,5 +14,6 @@
 
 - (IBAction)startXMLParsing:(id)sender;
 - (IBAction)startHTMLParsing;
+- (IBAction)runXPathTests:(id)sender;
 @end
 
