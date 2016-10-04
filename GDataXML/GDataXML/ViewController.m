@@ -33,7 +33,7 @@
     
     self.textView.text = @"";
     //格式为 .txt, .xml的储存数据的文件类型均可被GData解析；
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"xml" ofType:@"txt"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"xml" ofType:@"xml"];
     
     // 1.将本地文件转化为NSData；2.使用类GDataXMLDocument 解析转化后的数据 并且存储它；
     GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:[NSData dataWithContentsOfFile:path] encoding:NSUTF8StringEncoding error:NULL];
@@ -42,9 +42,9 @@
         NSInteger  n = 1;
         
         //类GDataXMLDocument的对象调用自身的方法nodesForXPath通过关键字"//employe", 取出对应的值并存放到数组中。
-        NSArray *employees = [doc nodesForXPath:@"////name" error:NULL];
+        NSArray *employees = [doc nodesForXPath:@"//employe" error:NULL];
         
-        //遍历数组employees 中GDataXMLElement类型的元素，并通过stringValue方法转化为字符串.
+        //遍历数组 employees 中GDataXMLElement类型的元素，并通过stringValue方法转化为字符串, 然后打印显示。
         for (GDataXMLElement *employe in employees) {
             
             [self print:[employe stringValue]];
